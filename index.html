@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Marks Calculator</title>
+  <meta name="description" content="Responsive vanilla web application to calculate student total marks, percentage, and letter grade across five subjects with comprehensive validation.">
+  <meta property="og:title" content="Student Marks Calculator">
+  <meta property="og:description" content="Responsive vanilla web application to calculate student total marks, percentage, and letter grade across five subjects with comprehensive validation.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calculator-container">
+    <header class="header">
+      <h1>Student Marks Calculator</h1>
+      <p class="subtitle">Enter marks for each subject (0 to 100) to calculate total score, percentage, and final grade.</p>
+    </header>
+
+    <form id="marks-form" novalidate>
+      <div id="general-error" class="error-banner" role="alert" aria-live="polite" hidden></div>
+
+      <div class="input-grid">
+        <div class="field-group">
+          <label for="mark-english">English</label>
+          <input 
+            type="number" 
+            id="mark-english" 
+            name="english" 
+            min="0" 
+            max="100" 
+            step="any" 
+            placeholder="0 - 100" 
+            required 
+            aria-describedby="err-english"
+          >
+          <span class="field-error" id="err-english" aria-live="polite"></span>
+        </div>
+
+        <div class="field-group">
+          <label for="mark-maths">Mathematics</label>
+          <input 
+            type="number" 
+            id="mark-maths" 
+            name="maths" 
+            min="0" 
+            max="100" 
+            step="any" 
+            placeholder="0 - 100" 
+            required 
+            aria-describedby="err-maths"
+          >
+          <span class="field-error" id="err-maths" aria-live="polite"></span>
+        </div>
+
+        <div class="field-group">
+          <label for="mark-science">Science</label>
+          <input 
+            type="number" 
+            id="mark-science" 
+            name="science" 
+            min="0" 
+            max="100" 
+            step="any" 
+            placeholder="0 - 100" 
+            required 
+            aria-describedby="err-science"
+          >
+          <span class="field-error" id="err-science" aria-live="polite"></span>
+        </div>
+
+        <div class="field-group">
+          <label for="mark-computer">Computer Science</label>
+          <input 
+            type="number" 
+            id="mark-computer" 
+            name="computer" 
+            min="0" 
+            max="100" 
+            step="any" 
+            placeholder="0 - 100" 
+            required 
+            aria-describedby="err-computer"
+          >
+          <span class="field-error" id="err-computer" aria-live="polite"></span>
+        </div>
+
+        <div class="field-group field-group-full">
+          <label for="mark-social">Social Studies</label>
+          <input 
+            type="number" 
+            id="mark-social" 
+            name="social" 
+            min="0" 
+            max="100" 
+            step="any" 
+            placeholder="0 - 100" 
+            required 
+            aria-describedby="err-social"
+          >
+          <span class="field-error" id="err-social" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button type="submit" id="btn-calculate" class="btn btn-primary">Calculate Results</button>
+        <button type="button" id="btn-reset" class="btn btn-secondary">Reset</button>
+      </div>
+    </form>
+
+    <section id="results-panel" class="results-panel" aria-live="polite" hidden>
+      <h2 class="results-heading">Calculation Summary</h2>
+      <div class="results-grid">
+        <div class="result-card">
+          <span class="result-label">Total Marks</span>
+          <span class="result-value" id="val-total">0 / 500</span>
+        </div>
+        <div class="result-card">
+          <span class="result-label">Percentage</span>
+          <span class="result-value" id="val-percentage">0.00%</span>
+        </div>
+        <div class="result-card">
+          <span class="result-label">Final Grade</span>
+          <span class="result-value grade-badge" id="val-grade">-</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

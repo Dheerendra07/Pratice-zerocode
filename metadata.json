@@ -1,0 +1,6 @@
+{
+  "name": "Student Marks Calculator",
+  "description": "Responsive vanilla web application to calculate student total marks, percentage, and letter grade across five subjects with comprehensive validation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
